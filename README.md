@@ -81,7 +81,15 @@ The Elyra pipeline `flight_delays.pipeline`, which is located in the `pipelines`
 on the `play` button as seen on the image above. The `submit` dialog will request two inputs from the user: a name 
 for the pipeline and a runtime to use while executing the pipeline.
 
-The list of available runtimes comes from the registered Kubeflow Pipelines runtimes documented above and includes a `Run in-place locally` option for local execution. After submission, Elyra will show a dialog with a direct link to where the experiment is being executed on Kubeflow Piplines.
+The list of available runtimes comes from the registered Kubeflow Pipelines runtimes documented above and includes a `Run in-place locally` option for local execution.
+
+#### Local execution
+
+If running locally, the notebooks are executed and updated in-place. You can track the progress in the terminal screen where you ran `jupyter lab`. The downloaded and processed datasets will be available locally in `notebooks/data` in this case.
+
+#### Kubeflow Pipelines execution
+
+After submitting the pipeline to Kubeflow Pipelines, Elyra will show a dialog with a direct link to where the experiment is being executed on Kubeflow Piplines.
 
 The user can access the pipelines, and respective experiment runs, via the `api_endpoint` of the Kubeflow Pipelines
 runtime (e.g. `http://[host]:[port]/pipeline`)
@@ -102,4 +110,4 @@ Please follow the [instructions](kfserving.md) for running the pipeline `flight_
 ### References
 
 Find more project details on [Elyra's GitHub](https://github.com/elyra-ai/elyra) or watching the
-[Elyra's demo](https://www.youtube.com/watch?v=Nj0yga6T4U8).
+[Elyra demo](https://www.youtube.com/watch?v=Nj0yga6T4U8).
