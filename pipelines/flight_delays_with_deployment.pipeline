@@ -1,0 +1,574 @@
+{
+  "doc_type": "pipeline",
+  "version": "3.0",
+  "json_schema": "http://api.dataplatform.ibm.com/schemas/common-pipeline/pipeline-flow/pipeline-flow-v3-schema.json",
+  "id": "d8fa85b7-04fd-467d-a45d-e127e1eccfe8",
+  "primary_pipeline": "07d7f720-4cde-4c57-a4ee-e99c68f307b1",
+  "pipelines": [
+    {
+      "id": "07d7f720-4cde-4c57-a4ee-e99c68f307b1",
+      "nodes": [
+        {
+          "id": "2f3f6243-82ef-43ee-af09-9888a5dfbc30",
+          "type": "execution_node",
+          "op": "execute-python-node",
+          "app_data": {
+            "filename": "../notebooks/load_data.py",
+            "runtime_image": "amancevice/pandas:1.1.1",
+            "env_vars": [
+              "DATASET_URL=https://dax-cdn.cdn.appdomain.cloud/dax-airline/1.0.1/airline_2m.tar.gz"
+            ],
+            "include_subdirectories": false,
+            "invalidNodeError": null,
+            "outputs": [
+              "data/airline_2m.csv"
+            ],
+            "ui_data": {
+              "label": "load_data",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-brand0%20jp-icon-selectable%22%20fill%3D%22%230D47A1%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M11.1%206.9V5.8H6.9c0-.5%200-1.3.2-1.6.4-.7.8-1.1%201.7-1.4%201.7-.3%202.5-.3%203.9-.1%201%20.1%201.9.9%201.9%201.9v4.2c0%20.5-.9%201.6-2%201.6H8.8c-1.5%200-2.4%201.4-2.4%202.8v2.2H4.7C3.5%2015.1%203%2014%203%2013.1V9c-.1-1%20.6-2%201.8-2%201.5-.1%206.3-.1%206.3-.1z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M10.9%2015.1v1.1h4.2c0%20.5%200%201.3-.2%201.6-.4.7-.8%201.1-1.7%201.4-1.7.3-2.5.3-3.9.1-1-.1-1.9-.9-1.9-1.9v-4.2c0-.5.9-1.6%202-1.6h3.8c1.5%200%202.4-1.4%202.4-2.8V6.6h1.7C18.5%206.9%2019%208%2019%208.9V13c0%201-.7%202.1-1.9%202.1h-6.2z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 72.16775512695312,
+              "y_pos": 91.4539566040039,
+              "description": "Python Script"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "b614bf55-c127-413a-935a-175d7afa7f0e",
+          "type": "execution_node",
+          "op": "execute-python-node",
+          "app_data": {
+            "filename": "../notebooks/load_data.py",
+            "runtime_image": "amancevice/pandas:1.1.1",
+            "env_vars": [
+              "DATASET_URL=https://dax-cdn.cdn.appdomain.cloud/dax-noaa-weather-data-jfk-airport/1.1.4/noaa-weather-data-jfk-airport.tar.gz"
+            ],
+            "include_subdirectories": false,
+            "invalidNodeError": null,
+            "outputs": [
+              "data/noaa-weather-data-jfk-airport/jfk_weather.csv"
+            ],
+            "ui_data": {
+              "label": "load_data",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-brand0%20jp-icon-selectable%22%20fill%3D%22%230D47A1%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M11.1%206.9V5.8H6.9c0-.5%200-1.3.2-1.6.4-.7.8-1.1%201.7-1.4%201.7-.3%202.5-.3%203.9-.1%201%20.1%201.9.9%201.9%201.9v4.2c0%20.5-.9%201.6-2%201.6H8.8c-1.5%200-2.4%201.4-2.4%202.8v2.2H4.7C3.5%2015.1%203%2014%203%2013.1V9c-.1-1%20.6-2%201.8-2%201.5-.1%206.3-.1%206.3-.1z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M10.9%2015.1v1.1h4.2c0%20.5%200%201.3-.2%201.6-.4.7-.8%201.1-1.7%201.4-1.7.3-2.5.3-3.9.1-1-.1-1.9-.9-1.9-1.9v-4.2c0-.5.9-1.6%202-1.6h3.8c1.5%200%202.4-1.4%202.4-2.8V6.6h1.7C18.5%206.9%2019%208%2019%208.9V13c0%201-.7%202.1-1.9%202.1h-6.2z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 65,
+              "y_pos": 241,
+              "description": "Python Script"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "67d35156-a7ba-4339-9975-d5eac9be5b1e",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "filename": "../notebooks/process_flight_data.ipynb",
+            "runtime_image": "amancevice/pandas:1.1.1",
+            "env_vars": [],
+            "include_subdirectories": false,
+            "invalidNodeError": null,
+            "outputs": [
+              "data/jfk_flight_features.csv"
+            ],
+            "ui_data": {
+              "label": "process_flight_data",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 344,
+              "y_pos": 97,
+              "description": "Notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "id": "eff34dc4-552d-49d1-86ab-ad774c09ed9c",
+                  "node_id_ref": "2f3f6243-82ef-43ee-af09-9888a5dfbc30",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "71257647-2fc5-4db8-95ef-5813bc386f95",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "filename": "../notebooks/process_weather_data.ipynb",
+            "runtime_image": "amancevice/pandas:1.1.1",
+            "env_vars": [],
+            "include_subdirectories": false,
+            "invalidNodeError": null,
+            "outputs": [
+              "data/jfk_weather_features.csv"
+            ],
+            "ui_data": {
+              "label": "process_weather_data",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 341,
+              "y_pos": 240,
+              "description": "Notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "id": "0a85bfc7-3bf3-4885-9026-2bd9fa30b729",
+                  "node_id_ref": "b614bf55-c127-413a-935a-175d7afa7f0e",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "d70363d7-8c8f-45d2-b539-746fd2a4e14b",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "filename": "../notebooks/merge_data.ipynb",
+            "runtime_image": "amancevice/pandas:1.1.1",
+            "env_vars": [],
+            "include_subdirectories": false,
+            "invalidNodeError": null,
+            "outputs": [
+              "data/jfk_flight_weather_features.csv"
+            ],
+            "ui_data": {
+              "label": "merge_data",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 623,
+              "y_pos": 166,
+              "description": "Notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 2
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "id": "8d964ba9-5fd5-455d-83ef-0d64ecd05c56",
+                  "node_id_ref": "67d35156-a7ba-4339-9975-d5eac9be5b1e",
+                  "port_id_ref": "outPort"
+                },
+                {
+                  "id": "abfb2d60-15ea-4b54-ba87-5eb82aca5204",
+                  "node_id_ref": "71257647-2fc5-4db8-95ef-5813bc386f95",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "1d8baea2-b4a8-4a64-b14b-c0ef0c234f01",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "filename": "../notebooks/analyze_flight_delays.ipynb",
+            "runtime_image": "amancevice/pandas:1.1.1",
+            "env_vars": [],
+            "include_subdirectories": false,
+            "invalidNodeError": null,
+            "ui_data": {
+              "label": "analyze_flight_delays",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 943,
+              "y_pos": 94,
+              "description": "Notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "id": "809a9b07-21ec-4d30-b607-f0fab979790b",
+                  "node_id_ref": "d70363d7-8c8f-45d2-b539-746fd2a4e14b",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "c40e2c40-3f4c-4dbb-8e78-3f20f0de116f",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "filename": "../notebooks/predict_flight_delays.ipynb",
+            "runtime_image": "amancevice/pandas:1.1.1",
+            "env_vars": [],
+            "include_subdirectories": false,
+            "invalidNodeError": null,
+            "outputs": [
+              "models/model.joblib",
+              "data/test_rows.npy"
+            ],
+            "ui_data": {
+              "label": "predict_flight_delays",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 942.013916015625,
+              "y_pos": 251.00418090820312,
+              "description": "Notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "id": "17ab35cb-a52f-4c37-984e-e33bf7b67d36",
+                  "node_id_ref": "d70363d7-8c8f-45d2-b539-746fd2a4e14b",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "7a4f1f66-4930-4fa4-b5da-293801b3cea6",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "filename": "../notebooks/deploy_model.ipynb",
+            "runtime_image": "amancevice/pandas:1.1.1",
+            "env_vars": [
+              "OS_URL=minio-service:9000",
+              "ACCESS_KEY_ID=minio",
+              "SECRET_ACCESS_KEY=minio123",
+              "MODEL_BUCKET=models",
+              "MODEL_DIR=models",
+              "MODEL_MODE=local"
+            ],
+            "include_subdirectories": false,
+            "invalidNodeError": null,
+            "ui_data": {
+              "label": "deploy_model",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 1227,
+              "y_pos": 171,
+              "description": "Notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "id": "207b171f-3de3-44fd-a4e1-accbb5fcc14b",
+                  "node_id_ref": "c40e2c40-3f4c-4dbb-8e78-3f20f0de116f",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "app_data": {
+        "ui_data": {
+          "comments": [
+            {
+              "id": "e5c417b4-9be7-4244-8597-21e0c0e00a70",
+              "x_pos": 28,
+              "y_pos": 17,
+              "width": 175,
+              "height": 42,
+              "class_name": "d3-comment-rect",
+              "content": "Load flight delay data",
+              "associated_id_refs": [
+                {
+                  "node_ref": "2f3f6243-82ef-43ee-af09-9888a5dfbc30"
+                }
+              ]
+            },
+            {
+              "id": "c1e71c34-9ae7-4a85-9251-91c554034cc2",
+              "x_pos": 30,
+              "y_pos": 338,
+              "width": 175,
+              "height": 42,
+              "class_name": "d3-comment-rect",
+              "content": "Load JFK weather data",
+              "associated_id_refs": [
+                {
+                  "node_ref": "b614bf55-c127-413a-935a-175d7afa7f0e"
+                }
+              ]
+            },
+            {
+              "id": "9cd374ba-b6ee-47a3-b963-4f164621d78b",
+              "x_pos": 292,
+              "y_pos": 15,
+              "width": 175,
+              "height": 42,
+              "class_name": "d3-comment-rect",
+              "content": "Clean up & pre-process flight delay data",
+              "associated_id_refs": [
+                {
+                  "node_ref": "67d35156-a7ba-4339-9975-d5eac9be5b1e"
+                }
+              ]
+            },
+            {
+              "id": "44d53e47-c149-4b69-ad6e-259dcd8f8b9f",
+              "x_pos": 308,
+              "y_pos": 334,
+              "width": 175,
+              "height": 42,
+              "class_name": "d3-comment-rect",
+              "content": "Clean up & pre-process weather data",
+              "associated_id_refs": [
+                {
+                  "node_ref": "71257647-2fc5-4db8-95ef-5813bc386f95"
+                }
+              ]
+            },
+            {
+              "id": "b12e0c12-9aa1-4c77-b6d5-0f02f7c64807",
+              "x_pos": 579,
+              "y_pos": 29,
+              "width": 243,
+              "height": 64,
+              "class_name": "d3-comment-rect",
+              "content": "Combine flight delay & weather dataset for downstream analytics & prediction tasks",
+              "associated_id_refs": [
+                {
+                  "node_ref": "d70363d7-8c8f-45d2-b539-746fd2a4e14b"
+                }
+              ]
+            },
+            {
+              "id": "5d7aa386-549a-4c76-8f58-7ead3658fd7f",
+              "x_pos": 908,
+              "y_pos": 20,
+              "width": 175,
+              "height": 42,
+              "class_name": "d3-comment-rect",
+              "content": "Analyze & visualize flight delay & weather data",
+              "associated_id_refs": [
+                {
+                  "node_ref": "1d8baea2-b4a8-4a64-b14b-c0ef0c234f01"
+                }
+              ]
+            },
+            {
+              "id": "bf560da3-5a43-4671-84ea-d98d562e1ec3",
+              "x_pos": 860,
+              "y_pos": 357,
+              "width": 230,
+              "height": 52,
+              "class_name": "d3-comment-rect",
+              "content": "Train & evaluate machine learning models to predict flight delays",
+              "associated_id_refs": [
+                {
+                  "node_ref": "c40e2c40-3f4c-4dbb-8e78-3f20f0de116f"
+                }
+              ]
+            }
+          ]
+        },
+        "version": 3
+      },
+      "runtime_ref": ""
+    }
+  ],
+  "schemas": []
+}
