@@ -1,6 +1,6 @@
 # Analyzing flight delay and weather data
 
-This repository contains a set of Python scripts and Jupyter notebooks that analyze and predict flight delays. The datasets are hosted on the [IBM Developer Data Asset Exchange](ibm.biz/data-exchange).
+This repository contains a set of Python scripts and Jupyter notebooks that analyze and predict flight delays. The datasets are hosted on the [IBM Developer Data Asset Exchange](https://ibm.biz/data-exchange).
 
 We use [Elyra](https://github.com/elyra-ai/elyra) to create a pipeline that can be executed locally or using a [Kubeflow Pipelines](https://www.kubeflow.org/docs/pipelines/overview/pipelines-overview/) runtime. This pipeline:
 
