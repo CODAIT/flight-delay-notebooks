@@ -104,7 +104,7 @@ kubectl port-forward -n istio-system svc/istio-ingressgateway 8080:80
 
 #### Running in Kubeflow Pipelines
 
-Sending requests to the inference service uses a different url and request structure, depending on whether you're using the ingress gateway or sending the request within the cluster (which will be the case if executing on a KFP runtime). In this case, set the Elyra node environment variable `MODEL_MODE=kfp`:
+Sending requests to the inference service uses a different url and request structure, depending on whether you're using the ingress gateway or sending the request within the cluster (which will be the case if executing on a KFP runtime). In this case, set the Elyra node environment variable `MODEL_MODE=kfp`, in the node `Properties` dialog:
 
 ![Deployment node config](docs/source/images/deploy-node-config.png)
 
