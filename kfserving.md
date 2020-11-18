@@ -1,6 +1,10 @@
 # Model deployment using KFServing
 
-The `pipelines` folder contains a pipeline - `flight_delays_with_deployment.pipeline` - that encompasses deploying the trained flight prediction model as a service running in [KFServing](https://www.kubeflow.org/docs/components/serving/kfserving/). In order to run this version of the pipeline, you will need to setup KFServing.
+The `pipelines` folder contains a pipeline - `flight_delays_with_deployment.pipeline` - that encompasses deploying the trained flight prediction model as a service running in [KFServing](https://www.kubeflow.org/docs/components/serving/kfserving/).
+
+![Deployment pipeline](docs/source/images/flight-delays-pipeline-deploy.png)
+
+In order to run this version of the pipeline, you will need to setup KFServing.
 
 **Note** this example uses the built-in `minio` object storage service within Kubeflow Pipelines as the storage location for deploying a model to KFServing. Hence, KFP is required unless you manually setup up minio, or use S3.
 
