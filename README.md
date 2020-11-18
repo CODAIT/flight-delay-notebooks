@@ -37,7 +37,7 @@ It's highly recommended to create a dedicated and consistent Python environment 
     $ jupyter lab
     ```
 
-### Configuring a local Kubeflow Pipeline runtime
+### Configuring a Kubeflow Pipeline runtime
 
 [Elyra's Notebook pipeline visual editor](https://elyra.readthedocs.io/en/latest/getting_started/overview.html#notebook-pipelines-visual-editor)
 currently supports running these pipelines in a Kubeflow Pipeline runtime.  If required, these are
@@ -49,8 +49,8 @@ KFP runtime with Elyra.
 ```bash
 elyra-metadata install runtimes --replace=true \
        --schema_name=kfp \
-       --name=kfp_local \
-       --display_name="Kubeflow Pipeline (local)" \
+       --name=kfp_runtime \
+       --display_name="Kubeflow Pipeline Runtime" \
        --api_endpoint=http://[host]:[api port]/pipeline \
        --cos_endpoint=http://[host]:[cos port] \
        --cos_username=[cos username] \
@@ -58,11 +58,9 @@ elyra-metadata install runtimes --replace=true \
        --cos_bucket=flights
 ```
 
-**Note:** The cloud object storage above is a local minio object storage but other cloud-based object storage services could be configured and used in this scenario.
+**Note:** The cloud object storage endpoint above assumes a local minio object storage but other cloud-based object storage services could be configured and used in this scenario.
 
-If using the default minio storage - following the local Kubeflow installation instructions above - the arguments should be `--cos_endpoint=http://minio-service:9000`, `--cos_username=minio`, `--cos_password=minio123`.
-
-Similarly, the KFP api endpoint would be `--api_endpoint=http://127.0.0.1:31380/pipeline`.
+If using the default minio storage - following the local Kubeflow installation instructions above - the arguments should be `--cos_endpoint=http://minio-service:9000`, `--cos_username=minio`, `--cos_password=minio123`. The api endpoint for local Kubeflow Pipelines would then be `--api_endpoint=http://127.0.0.1:31380/pipeline`.
 
 **Don't forget to setup port-forwarding for the KFP ML Pipelines API service and Minio service as per the above instructions.**
 
