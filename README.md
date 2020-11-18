@@ -9,6 +9,7 @@ We use [Elyra](https://github.com/elyra-ai/elyra) to create a pipeline that can 
 * Performs data merging and feature extraction
 * Analyzes and visualizes the processed dataset
 * Trains and evaluates machine learning models for predicting delayed flights, using features about flights as well as related weather features
+* _Optionally_ deploys the trained model to Kubeflow Serving
 
 ![Flight Delays Pipeline](docs/source/images/flight-delays-pipeline.png)
 
